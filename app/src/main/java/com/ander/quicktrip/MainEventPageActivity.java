@@ -285,7 +285,8 @@ public class MainEventPageActivity extends AppCompatActivity implements PriceFra
 
         // randomize button
         token = (ImageView) findViewById(R.id.token);
-        anim = ObjectAnimator.ofFloat(token, "rotation", 360);
+//        anim = ObjectAnimator.ofFloat(token, "rotation", 360);
+        anim = ObjectAnimator.ofFloat(token, "rotationY", 0.0f, 360f);
         token.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -299,7 +300,7 @@ public class MainEventPageActivity extends AppCompatActivity implements PriceFra
                 }
             }
         });
-        anim.setDuration(100);
+        anim.setDuration(300);
     }
 
     // *********************************************************************
@@ -1300,7 +1301,7 @@ public class MainEventPageActivity extends AppCompatActivity implements PriceFra
 
                                                             @Override
                                                             public void onError() {
-
+                                                                mSingletonInstance.getmMainPageObject().setmUrl("");
                                                             }
                                                         });
                                                 String url = "http://farm" +
