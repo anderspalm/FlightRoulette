@@ -1,0 +1,32 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/gallery_background"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary">
+
+        <ImageView
+            android:id="@+id/back_press"
+            android:layout_width="20sp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:src="@mipmap/let_arrow_white" />
+
+    </RelativeLayout>
+
+    <ImageView
+        android:layout_centerInParent="true"
+        android:src="@drawable/atlantis_map"
+        android:id="@+id/gallery_expanded_image"
+        android:layout_width="match_parent"
+        android:scaleType="fitCenter"
+        android:layout_height="match_parent"
+        android:layout_margin="10dp"/>
+
+</RelativeLayout>

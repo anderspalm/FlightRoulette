@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/date_out"
+            android:icon="@drawable/calendar"
+            android:title="Departure Date" />
+        <item
+            android:id="@+id/date_in"
+            android:icon="@drawable/calendar"
+            android:title="Return Date" />
+        <item
+            android:id="@+id/nav_manage"
+            android:icon="@drawable/origin_airport"
+            android:title="Origin Airport" />
+        <item
+            android:id="@+id/nav_slideshow"
+            android:icon="@drawable/region_icon"
+            android:title="Destination Region" />
+        <item
+            android:id="@+id/nav_camera"
+            android:icon="@drawable/price2"
+            android:title="Maximum Price" />
+        <item
+            android:id="@+id/nav_gallery"
+            android:icon="@drawable/cabin"
+            android:title="Cabin Class" />
+    </group>
+</menu>

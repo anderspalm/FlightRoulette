@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:id="@+id/location_fragment_placeholder"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/landing_page"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:alpha=".8"
+            android:scaleType="centerCrop"
+            android:src="@drawable/misty_mountains" />
+
+        <DatePicker
+            android:id="@+id/outDatePicker"
+            android:layout_width="320dp"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:headerBackground="@color/pinkHighlight"
+            android:background="@color/colorPrimary"
+            android:elevation="20dp"
+            android:calendarTextColor="@color/white"
+            android:datePickerMode="calendar"
+            android:yearListSelectorColor="@color/pinkHighlight"
+            android:visibility="gone" />
+
+        <DatePicker
+            android:id="@+id/inDatePicker"
+            android:layout_width="320dp"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:headerBackground="@color/pinkHighlight"
+            android:background="@color/colorPrimary"
+            android:elevation="40dp"
+            android:calendarTextColor="@color/white"
+            android:yearListSelectorColor="@color/pinkHighlight"
+            android:visibility="gone" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="80dp"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/h1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="Let's Get Started..."
+                android:layout_marginBottom="20dp"
+                android:textStyle="bold"
+                android:textColor="@color/pinkHighlight"
+                android:textSize="25sp" />
+
+            <TextView
+                android:id="@+id/h2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignEnd="@id/h1"
+                android:layout_marginBottom="10dp"
+                android:gravity="center_horizontal"
+                android:text="For you, the spontaneous traveller to find and how to go"
+                android:textSize="17.5sp"
+                android:textStyle="bold"
+                android:textColor="@color/white"/>
+
+            <LinearLayout
+                android:id="@+id/spinner_buttons"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="15dp"
+                android:layout_marginLeft="15dp"
+                android:orientation="vertical"
+                android:padding="10dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="30dp"
+                        android:background="@color/colorPrimary"
+                        android:elevation="5dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="10dp"
+                            android:layout_gravity="center_vertical"
+                            android:text="DEPARTURE DATE"
+                            android:textColor="#fff"
+                            android:textSize="15sp"  />
+
+                        <ImageView
+                            android:id="@+id/out_date"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginLeft="10dp"
+                            android:layout_gravity="right"
+                            android:background="#00000000"
+                            android:padding="10dp"
+                            android:src="@drawable/calendar" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@color/colorPrimary"
+                        android:layout_marginBottom="30dp"
+                        android:elevation="5dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="10dp"
+                            android:layout_gravity="center_vertical"
+                            android:text="RETURN DATE"
+                            android:textColor="#fff"
+                            android:textSize="15sp" />
+
+                        <ImageView
+                            android:id="@+id/in_date"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_gravity="right"
+                            android:background="#00000000"
+                            android:padding="10dp"
+                            android:src="@drawable/calendar"/>
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="50dp"
+                        android:background="@color/colorPrimary"
+                        android:elevation="5dp">
+
+                        <Button
+                            android:id="@+id/toLocalAirport"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_alignParentBottom="true"
+                            android:layout_gravity="center"
+                            android:background="#00000000"
+                            android:elevation="4dp"
+                            android:text="Origin Airport"
+                            android:gravity="center_vertical"
+                            android:textColor="@color/white"
+                            android:textSize="15sp" />
+                    </RelativeLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+
+        <!--<Button-->
+        <!--android:id="@+id/toLocalAirport"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_alignParentBottom="true"-->
+        <!--android:layout_gravity="center"-->
+        <!--android:layout_marginTop="10dp"-->
+        <!--android:background="@color/softLightBlue"-->
+        <!--android:elevation="4dp"-->
+        <!--android:text="ORIGIN AIRPORT"-->
+        <!--android:textColor="@color/white"-->
+        <!--android:textSize="14sp" />-->
+
+    </RelativeLayout>
+
+</LinearLayout>

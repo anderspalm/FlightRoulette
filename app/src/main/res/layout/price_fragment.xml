@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/colorPrimary"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/back_press"
+            android:src="@mipmap/let_arrow_white"
+            android:layout_width="20sp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:text="The first day of vacation"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="25dp"
+        android:layout_centerInParent="true"
+        android:orientation="vertical">
+
+    <android.support.v7.widget.AppCompatSeekBar
+        android:id="@+id/price_seek_bar"
+        style="@style/Base.Widget.AppCompat.SeekBar"
+        android:thumb="@mipmap/ic_launcher"
+        android:thumbOffset="10dp"
+        android:thumbTintMode="screen"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:layout_marginBottom="25dp"
+        android:max="12000"
+        android:maxHeight="3dp"
+        android:maxWidth="3dp" />
+
+    <LinearLayout
+        android:layout_alignBottom="@id/price_seek_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/seek_bar_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="$0"
+                android:textColor="@color/pinkHighlight"
+                android:textSize="18dp"
+                android:layout_margin="10dp"/>
+
+            <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="/"
+            android:textColor="@color/white"
+            android:textSize="18dp"
+            android:layout_margin="10dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="12000"
+                android:textColor="@color/white"
+                android:textSize="18dp"
+                android:layout_margin="10dp"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    </LinearLayout>
+
+
+</RelativeLayout>

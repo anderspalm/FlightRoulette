@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/colorPrimary">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/colorPrimary">
+
+            <ImageView
+                android:id="@+id/back_press"
+                android:layout_width="20sp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:src="@mipmap/let_arrow_white" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="?attr/actionBarSize"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:layout_centerInParent="true">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:gravity="center"
+                android:text="Your Departure Airport"
+                android:textColor="@color/white"
+                android:textSize="20sp" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:gravity="center"
+                android:text="Try using a local town or city as a search"
+                android:textColor="@color/white"
+                android:textSize="14sp" />
+            </LinearLayout>
+
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="@color/white"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="0px"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".1"
+                    android:src="@mipmap/search_icon" />
+
+                <EditText
+                    android:id="@+id/city_editText"
+                    android:layout_width="0px"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight=".9"
+                    android:background="#00000000" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <FrameLayout
+            android:id="@+id/frame"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/location_RView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignBaseline="@id/location_title"/>
+
+        </FrameLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

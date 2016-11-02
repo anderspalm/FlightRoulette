@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="10dp"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="2.5dp">
+
+        <ImageView
+            android:id="@+id/rec_view_photo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scaleType="centerCrop" />
+
+        <!--<LinearLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_gravity="bottom"-->
+            <!--android:orientation="horizontal">-->
+
+            <!--<RelativeLayout-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="10dp"-->
+                <!--android:layout_gravity="center"-->
+                <!--android:layout_margin="10dp" />-->
+
+            <!--<LinearLayout-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_margin="10dp"-->
+                <!--android:orientation="vertical">-->
+
+                <!--&lt;!&ndash;<TextView&ndash;&gt;-->
+                <!--&lt;!&ndash;android:id="@+id/photo_title"&ndash;&gt;-->
+                <!--&lt;!&ndash;android:layout_width="match_parent"&ndash;&gt;-->
+                <!--&lt;!&ndash;android:layout_height="0px"&ndash;&gt;-->
+                <!--&lt;!&ndash;android:layout_margin="5dp"&ndash;&gt;-->
+                <!--&lt;!&ndash;android:layout_weight=".3"&ndash;&gt;-->
+                <!--&lt;!&ndash;android:letterSpacing=".2"&ndash;&gt;-->
+                <!--&lt;!&ndash;android:textAlignment="center"&ndash;&gt;-->
+                <!--&lt;!&ndash;android:textColor="#fff"&ndash;&gt;-->
+                <!--&lt;!&ndash;android:textSize="12sp"&ndash;&gt;-->
+                <!--&lt;!&ndash;android:textStyle="bold" />&ndash;&gt;-->
+            <!--</LinearLayout>-->
+
+        <!--</LinearLayout>-->
+    </FrameLayout>
+
+</LinearLayout>
