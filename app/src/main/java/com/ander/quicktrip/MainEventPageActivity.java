@@ -75,7 +75,7 @@ public class MainEventPageActivity extends AppCompatActivity implements PriceFra
     String outyear, outmonth, outday, outnewDay, year2, month2, day2, newDay2,
             idInboundObj, outBoundObj, arrivalObj, departureObj,
             woeId,
-            mApiKey = ApiClass.skyscannerApi,
+            mApiKey,
             oCountry, dCountry,
             origincity, destinedCity,
             originAirporstname, destinedAirportName,
@@ -102,6 +102,8 @@ public class MainEventPageActivity extends AppCompatActivity implements PriceFra
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_event_page2);
+
+        mApiKey = ApiClass.skyscannerApi;
 
         // *********************************************************************
 
@@ -292,8 +294,10 @@ public class MainEventPageActivity extends AppCompatActivity implements PriceFra
             public void onClick(View view) {
                 view.setAnimation(mClickAnim);
                 if (anim.isRunning()) {
-                    Intent intent = new Intent(mContext, MainEventPageActivity.class);
-                    startActivity(intent);
+                    queue.cancelAll(this);
+                    anim.end();
+//                    Intent intent = new Intent(mContext, MainEventPageActivity.class);
+//                    startActivity(intent);
                 } else {
                     mNoFlightCount = 0;
                     callSetup();
@@ -1262,6 +1266,7 @@ public class MainEventPageActivity extends AppCompatActivity implements PriceFra
                         });
                         queue.add(photoGalleryRequest);
 
+
                         JsonObjectRequest mainPagePhotoRequest = new JsonObjectRequest(Request.Method.GET,
                                 "https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=" +
                                         ApiClass.flickrApi + "&woe_id=" + woeId + "&tags=landmark&format=json&nojsoncallback=1",
@@ -1276,6 +1281,8 @@ public class MainEventPageActivity extends AppCompatActivity implements PriceFra
 
                                             JSONObject container = response.getJSONObject("photos");
                                             JSONArray photos = container.getJSONArray("photo");
+
+                                            mSingletonInstance.getmMainPageObject().setmUrl("");
 
 //      needed for photo formatting: id; secret; server; farm
 //      https://farm{farm-id}.staticflickr.com/{server-id}/{id}_{secret}.jpg
@@ -1626,6 +1633,7 @@ public class MainEventPageActivity extends AppCompatActivity implements PriceFra
         super.onResume();
         MainPageInfo();
         rePopulateOriginAndInOutDate();
+        mApiKey = ApiClass.skyscannerApi;
     }
 
     public void rePopulateOriginAndInOutDate() {

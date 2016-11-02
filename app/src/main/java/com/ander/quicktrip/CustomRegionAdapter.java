@@ -1,13 +1,16 @@
 package com.ander.quicktrip;
 
 import android.animation.LayoutTransition;
+import android.animation.ObjectAnimator;
 import android.content.Context;
 import android.graphics.Region;
 import android.provider.ContactsContract;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.AlphaAnimation;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -44,6 +47,7 @@ public class CustomRegionAdapter extends RecyclerView.Adapter<CustomRegionAdapte
         holder.title.setText(array.get(position).getmName());
         Picasso.with(mContext).load(array.get(position).getmURL()).into(holder.image);
 
+
         holder.image.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -68,17 +72,33 @@ public class CustomRegionAdapter extends RecyclerView.Adapter<CustomRegionAdapte
         public void region(String data);
     }
 
-    public static class RegionViewHolder extends RecyclerView.ViewHolder{
+    public class RegionViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         public TextView title;
         public ImageView image;
-
+        ObjectAnimator mObjAnimator;
+        AlphaAnimation mAlphaAnimator;
+        private static final String TAG = "RegionViewHolder";
 
         public RegionViewHolder(View itemView) {
             super(itemView);
+            itemView.setOnClickListener(this);
             title = (TextView) itemView.findViewById(R.id.region_text);
             image = (ImageView) itemView.findViewById(R.id.region_image);
+            mObjAnimator = ObjectAnimator.ofFloat(image, "rotationY", 0.0f, 180f);
+            mAlphaAnimator = new AlphaAnimation(0.8f, 1f);
+        }
+
+        @Override
+        public void onClick(View v) {
+            v.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    mObjAnimator.start();
+                    v.setAnimation(mAlphaAnimator);
+                    Log.i(TAG, "onClick: ");
+                }
+            });
         }
     }
-
 
 }

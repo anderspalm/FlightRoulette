@@ -115,7 +115,7 @@ public class DBHelper extends SQLiteOpenHelper {
 
     public String getRandomAirportCode() {
         SQLiteDatabase db = getReadableDatabase();
-        int random = (int) (Math.random() * 100);
+        int random = (int) (Math.random() * 257);
         String randToString = String.valueOf(random);
         Cursor cursor = db.rawQuery("SELECT * FROM " + AIRPORT_TABLE + " WHERE " + AIRPORT_ID + " = " + randToString, null);
 
@@ -146,7 +146,7 @@ public class DBHelper extends SQLiteOpenHelper {
     public String getRandSAmericaAirportCode() {
         SQLiteDatabase db = getReadableDatabase();
 
-        Cursor cursor = db.rawQuery("SELECT * FROM " + AIRPORT_TABLE + " WHERE " + AIRPORT_REGION + " like '%outhEastAsi%'", null);
+        Cursor cursor = db.rawQuery("SELECT * FROM " + AIRPORT_TABLE + " WHERE " + AIRPORT_REGION + " like '%outhAmeric%'", null);
 
         int random = (int) (Math.random() * cursor.getCount());
         int randToString = random;
@@ -163,7 +163,7 @@ public class DBHelper extends SQLiteOpenHelper {
     public String getRandSAsiaAirportCode() {
         SQLiteDatabase db = getReadableDatabase();
 
-        Cursor cursor = db.rawQuery("SELECT * FROM " + AIRPORT_TABLE + " WHERE " + AIRPORT_REGION + " like '%outhAmeric%'", null);
+        Cursor cursor = db.rawQuery("SELECT * FROM " + AIRPORT_TABLE + " WHERE " + AIRPORT_REGION + " like '%outhEastAsi%'", null);
 
         int random = (int) (Math.random() * cursor.getCount());
         int randToString = random;
@@ -472,7 +472,7 @@ public class DBHelper extends SQLiteOpenHelper {
         arrayList.add(new AirportInformationObj("53", "Munich", "MUC", "Europe", "Germany"));
         arrayList.add(new AirportInformationObj("54", "Berlin", "BER", "Europe", "Germany"));
         arrayList.add(new AirportInformationObj("55", "Stockholm", "STO", "Europe", "Sweden"));
-        arrayList.add(new AirportInformationObj("56", "St Petersburg Pulkovo", "LED", "Europe", "Russia", "Saint Petersburg"));
+        arrayList.add(new AirportInformationObj("56", "St Petersburg Pulkovo", "LED", "Europe", "Russia", "St Petersburg"));
         arrayList.add(new AirportInformationObj("57", "Athens Intl", "ATH", "Europe", "Greece", "Athens"));
         arrayList.add(new AirportInformationObj("58", "Zurich", "ZRH", "Europe", "Switzerland"));
         arrayList.add(new AirportInformationObj("59", "Vienna", "VIE", "Europe", "Italy"));
@@ -496,14 +496,14 @@ public class DBHelper extends SQLiteOpenHelper {
         arrayList.add(new AirportInformationObj("77", "Helsinki Vantaa", "HEL", "Europe", "Finland", "Helsinki"));
         arrayList.add(new AirportInformationObj("78", "Fortaleza Ariport", "FOR", "SouthAmerica", "Brazil", "Fortaleza"));
         arrayList.add(new AirportInformationObj("79", "Caracas Ariport", "CCS", "SouthAmerica", "Colombia", "Caracas"));
-        arrayList.add(new AirportInformationObj("80", "Manaus Ariport", "MAO", "SouthAmerica", "Brazil", "Manaus"));
+        arrayList.add(new AirportInformationObj("80", "Carrasco Ariport", "MAO", "SouthAmerica", "Brazil", "Manaus"));
         arrayList.add(new AirportInformationObj("81", "Cali Ariport", "CLO", "SouthAmerica", "Colombia", "Cali"));
         arrayList.add(new AirportInformationObj("82", "Rio De Janeiro Ariport", "RIO", "SouthAmerica", "Brazil", "Rio de Janeiro"));
         arrayList.add(new AirportInformationObj("83", "Lima Ariport", "LIM", "SouthAmerica", "Peru", "Lima"));
         arrayList.add(new AirportInformationObj("84", "Buenos Aires", "BUE", "SouthAmerica", "Argentina", "Buenos Aires"));
         arrayList.add(new AirportInformationObj("85", "Brasilia Airport", "BSB", "SouthAmerica", "Brazil", "Brasilia"));
         arrayList.add(new AirportInformationObj("86", "Quito Airport", "UIO", "SouthAmerica", "Ecuador", "Quito"));
-        arrayList.add(new AirportInformationObj("87", "Manaus Airport", "MAO", "SouthAmerica", "Brazil", "Manaus"));
+        arrayList.add(new AirportInformationObj("87", "Berisso Intl", "MVD", "SouthAmerica", "Uruguay", "Montevideo"));
         arrayList.add(new AirportInformationObj("88", "Caracas Airport", "CCS", "SouthAmerica", "Venezuela", "Caracas"));
         arrayList.add(new AirportInformationObj("89", "Barranquilla Airport", "BAQ", "SouthAmerica", "Colombia", "Barranquilla"));
         arrayList.add(new AirportInformationObj("90", "Guayaquil Airport", "GYE", "SouthAmerica", "Ecuador", "Guayaquil"));
